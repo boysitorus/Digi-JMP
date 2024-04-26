@@ -1,34 +1,19 @@
 package com.ifs21025.projectakhir_digidevmdj;
 
-import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.appcompat.widget.Toolbar;
 import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
-
 import android.app.AlertDialog;
 import android.content.DialogInterface;
 import android.content.Intent;
 import android.database.Cursor;
 import android.os.Bundle;
-import android.util.Log;
-import android.view.Menu;
-import android.view.MenuInflater;
 import android.view.MenuItem;
 import android.view.View;
-import android.widget.AdapterView;
-import android.widget.ArrayAdapter;
-import android.widget.CursorAdapter;
-import android.widget.ListView;
-import android.widget.SimpleCursorAdapter;
-import android.widget.TextView;
 import android.widget.Toast;
-
-import com.ifs21025.projectakhir_digidevmdj.databinding.ActivityLoginBinding;
 import com.ifs21025.projectakhir_digidevmdj.databinding.ActivityMainBinding;
-
 import java.util.ArrayList;
-import java.util.List;
 
 public class MainActivity extends AppCompatActivity {
     RecyclerView recyclerView;
@@ -98,15 +83,7 @@ public class MainActivity extends AppCompatActivity {
         new AlertDialog.Builder(this)
                 .setTitle("Option")
                 .setMessage("")
-                .setNeutralButton("Lihat", new DialogInterface.OnClickListener() {
-                    @Override
-                    public void onClick(DialogInterface dialog, int which) {
-                       Intent intent = new Intent(getApplicationContext(), DetailCourseActivity.class);
-                       intent.putExtra("ID", id);
-                       startActivity(intent);
-                    }
-                })
-                .setPositiveButton("Edit", new DialogInterface.OnClickListener() {
+                .setNegativeButton("Edit", new DialogInterface.OnClickListener() {
                     @Override
                     public void onClick(DialogInterface dialog, int which) {
                         Intent intent = new Intent(getApplicationContext(), EditCourseActivity.class);
@@ -114,7 +91,7 @@ public class MainActivity extends AppCompatActivity {
                         startActivity(intent);
                     }
                 })
-                .setNegativeButton("Hapus", new DialogInterface.OnClickListener() {
+                .setPositiveButton("Hapus", new DialogInterface.OnClickListener() {
                     @Override
                     public void onClick(DialogInterface dialog, int which) {
                         Boolean delete = databaseHelper.deleteCourse(id);

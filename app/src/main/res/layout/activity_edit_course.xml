@@ -12,7 +12,7 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:fontFamily="@font/poppins_bold"
-        android:text="Update Course"
+        android:text="Detail / Update Course"
         android:textColor="@color/purple_200"
         android:textSize="24dp"
         app:layout_constraintEnd_toEndOf="parent"
@@ -64,7 +64,7 @@
     <EditText
         android:id="@+id/etDescription"
         android:layout_width="0dp"
-        android:layout_height="50dp"
+        android:layout_height="wrap_content "
         android:layout_marginTop="20dp"
         android:background="@drawable/lavender_border"
         android:ems="10"

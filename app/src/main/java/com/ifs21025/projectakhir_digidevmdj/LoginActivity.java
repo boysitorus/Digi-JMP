@@ -29,7 +29,7 @@ public class LoginActivity extends AppCompatActivity {
                 String password = binding.loginPassword.getText().toString();
 
                 if(email.equals("")||password.equals(""))
-                    Toast.makeText(LoginActivity.this, "All fields are mandatory", Toast.LENGTH_SHORT).show();
+                    Toast.makeText(LoginActivity.this, "Field username dan password tidak boleh kosong", Toast.LENGTH_SHORT).show();
                 else{
                     Boolean checkCredentials = databaseHelper.checkEmailPassword(email, password);
 
@@ -39,7 +39,7 @@ public class LoginActivity extends AppCompatActivity {
                         intent.putExtra("EMAIL", email);
                         startActivity(intent);
                     }else{
-                        Toast.makeText(LoginActivity.this, "Invalid Credentials", Toast.LENGTH_SHORT).show();
+                        Toast.makeText(LoginActivity.this, "Username atau Password tidak valid", Toast.LENGTH_SHORT).show();
                     }
                 }
             }
